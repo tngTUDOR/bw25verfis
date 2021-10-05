@@ -1,0 +1,4 @@
+FROM continuumio/miniconda3:4.10.3-alpine
+
+COPY requirements.txt .
+RUN conda install -y -q -c conda-forge -c cmutel -c haasad -c tomas_navarrete --file=requirements.txt && conda clean --all 
